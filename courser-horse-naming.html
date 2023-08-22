@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>下匹一定是駿馬！</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+      }
+      .container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>隨機選擇一個名字</h1>
+      <button id="pickButton" class="btn btn-primary mt-3">駿馬招來！</button>
+      <h2 id="result" class="mt-4"></h2>
+    </div>
+
+    <script>
+      const items = [
+        '西野花',
+        '富士奇石',
+        '青雲天空',
+        '目白光明',
+        '里見光鑽',
+        '北部玄駒',
+        '愛慕織姬',
+        '目白阿爾丹',
+        '美浦波旁',
+        '榮進閃耀',
+        '櫻花千代王',
+        '好歌劇',
+        '春烏菈菈',
+        '玉藻十字',
+        '美妙姿勢',
+        '小栗帽',
+        '琵琶晨光',
+        '目白多伯',
+        '島川喬登',
+        '魯道夫象徵',
+        '黃金城市',
+        '曼哈頓咖啡',
+        '川上公主',
+        '米浴',
+        '超級小溪',
+        '愛麗數碼',
+        '菱曙',
+        '待兼福來',
+        '榮進閃耀',
+        '名將怒濤',
+        '特別週',
+        '丸善斯基',
+        '黃金城市',
+        '富士奇石',
+        '幻想',
+        '草上飛',
+        '幻想',
+        '神鷹',
+        '菱亞馬遜',
+        '青雲天空',
+        '氣槽',
+        '重砲',
+        '成田白仁',
+        '醒目飛鷹',
+        '成田大進',
+        '真機伶',
+        '東海帝皇',
+        '目白麥昆',
+        '琵琶晨光',
+        '美浦波旁',
+        '好歌劇',
+        '特別週',
+        '無聲鈴鹿',
+        '東海帝皇',
+        '丸善斯基',
+        '小栗帽',
+        '大樹快車',
+        '目白麥昆',
+        '魯道夫象徵',
+        '米浴',
+        '待兼唐懷瑟',
+        '黃金船',
+        '伏特加',
+        '大和赤驥',
+        '草上飛',
+        '神鷹',
+        '氣槽',
+        '重砲',
+        '超級小溪',
+        '目白雷恩',
+        '愛麗速子',
+        '勝利獎券',
+        '櫻花驀進王',
+        '春烏菈菈',
+        '待兼福來',
+        '優秀素質',
+        '帝王光輝',
+        '西野花',
+        '東商變革',
+        '大和赤驥',
+        '八重無敵',
+        '艾尼風神',
+        '雙渦輪'
+      ]
+
+      const pickButton = document.getElementById('pickButton')
+      const result = document.getElementById('result')
+
+      pickButton.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * items.length)
+        result.textContent = `下匹馬名是：${items[randomIndex]}`
+      })
+    </script>
+  </body>
+</html>
