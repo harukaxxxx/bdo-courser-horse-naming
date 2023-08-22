@@ -114,23 +114,29 @@
         '艾尼風神',
         '雙渦輪',
       ]
-      let items = originalItems.slice()
+      let items =
+        JSON.parse(localStorage.getItem('remainingItems')) ||
+        originalItems.slice()
+      let currentIndex = parseInt(localStorage.getItem('currentIndex')) || 0
 
       const pickButton = document.getElementById('pickButton')
       const result = document.getElementById('result')
-      let currentIndex = 0
 
       pickButton.addEventListener('click', () => {
         if (items.length > 0) {
           const selectedItem = items[currentIndex]
-          result.textContent = `下匹馬名是：${selectedItem}`
+          result.textContent = `下匹馬叫：${selectedItem}`
 
           currentIndex = (currentIndex + 1) % items.length
+          localStorage.setItem('currentIndex', currentIndex)
         } else {
           items = originalItems.slice()
           currentIndex = 0
+          localStorage.setItem('currentIndex', currentIndex)
           result.textContent = '所有馬名已抽完，重新開始抽選！'
         }
+
+        localStorage.setItem('remainingItems', JSON.stringify(items))
       })
     </script>
   </body>
