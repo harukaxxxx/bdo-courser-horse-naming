@@ -29,7 +29,7 @@
     </div>
 
     <script>
-      const items = [
+      const originalItems = [
         '西野花',
         '富士奇石',
         '青雲天空',
@@ -112,15 +112,25 @@
         '大和赤驥',
         '八重無敵',
         '艾尼風神',
-        '雙渦輪'
+        '雙渦輪',
       ]
+      let items = originalItems.slice()
 
       const pickButton = document.getElementById('pickButton')
       const result = document.getElementById('result')
+      let currentIndex = 0
 
       pickButton.addEventListener('click', () => {
-        const randomIndex = Math.floor(Math.random() * items.length)
-        result.textContent = `下匹馬名是：${items[randomIndex]}`
+        if (items.length > 0) {
+          const selectedItem = items[currentIndex]
+          result.textContent = `下匹馬名是：${selectedItem}`
+
+          currentIndex = (currentIndex + 1) % items.length
+        } else {
+          items = originalItems.slice()
+          currentIndex = 0
+          result.textContent = '所有馬名已抽完，重新開始抽選！'
+        }
       })
     </script>
   </body>
